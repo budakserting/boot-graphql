@@ -34,7 +34,7 @@ public class BookController {
     }
 
     @MutationMapping
-    public Book addBook(String title, String author) {
+    public Book addBook(@Argument String title, @Argument String author) {
         Book book = new Book(null, title, author);
         return bookRepository.save(book);
     }
